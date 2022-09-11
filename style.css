@@ -1,0 +1,51 @@
+* {
+  color: white;
+  background-color: #232020;
+}
+
+#page {
+  padding: 50px;
+  margin: 0; 
+}
+
+#wrap {
+  max-width: 1200px;
+}
+
+#header {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 100px);
+  grid-template-rows: repeat(auto-fill, 100px);
+  gap: 10px;
+}
+
+.counter {
+  text-align: center;
+  border: 1px solid white;
+}
+#banner  {
+  grid-column: 1 / 4;
+  grid-row: 1 / 4;
+
+  text-align: center;
+  text-justify: center;
+
+  border: 1px solid white;
+}
+
+#mineButton {
+  grid-column: 1 / 4;
+  grid-row: 4 / 6;
+  margin: 10px;
+
+  font-size: 14px;
+  transition-property: font-size;
+  transition-duration: 0.2;
+  transition-delay: 0.4s;
+
+  background-color: grey;
+}
+
+#mineButton:active {
+  font-size: 36px;
+}
