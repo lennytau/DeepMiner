@@ -3,6 +3,8 @@ const clickMine = document.getElementById("mineButton");
 
 const counterStone = document.getElementById("stoneCounter").childNodes[1];
 const counterCoal = document.getElementById("coalCounter").childNodes[1];
+const counterCopper = document.getElementById("copperCounter").childNodes[1];
+const counterIron = document.getElementById("ironCounter").childNodes[1];
 
 //Game variables
 const cycleLength = 2000;
@@ -35,28 +37,43 @@ const probabilities = [
   0  //gold
 ]
 
+const names = [
+  "stone",
+  "coal",
+  "copper",
+  "iron",
+  "silver",
+  "gold"
+]
 
 
 //Mine Button
 function mine() {
   counters[0] += 1;
-  if (Math.random() >= 1 - probabilities[1]) {
-    counters[1] += 1;
-    console.log("struck coal")
-  };
+
+  for (var i = 1; i < probabilities.length - 1; i++) {
+    if (Math.random() >= 1 - probabilities[i]) {
+      counters[i] += 1;
+      console.log(names[i], "at", probabilities[i]);     
+    }
+  }
+
   counterStone.innerText = counters[0];
   counterCoal.innerText = counters[1];
+  counterCopper.innerText = counters[2];
+  counterIron.innerText = counters[3];
 }
 
 //Game Loop
 window.setInterval(function () {
   rnumber = Math.random();
-  //console.log(rnumber);
-
+  
+  //resource updates
   counters[0] += totalIncrement[0];
   if (rnumber >= 1 - probabilities[1]) {
     counters[1] += totalIncrement[0];
   };
+  //DOM inventory updates
   
   
   counterStone.innerText = counters[0];
