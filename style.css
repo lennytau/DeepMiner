@@ -14,8 +14,21 @@
 
 #header {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 100px);
-  grid-template-rows: repeat(auto-fill, 100px);
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: none;
+  gap: 10px;
+}
+
+#leftHeader {
+  display: grid; 
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(5, 100px);
+}
+
+#rightHeader {
+  display: grid;
+  grid-template-columns: repeat(6, 100px);
+  grid-template-rows: repeat(5, 100px);
   gap: 10px;
 }
 
@@ -26,6 +39,7 @@
 #banner  {
   grid-column: 1 / 4;
   grid-row: 1 / 4;
+  margin: 10px;
 
   text-align: center;
   text-justify: center;
@@ -36,16 +50,8 @@
 #mineButton {
   grid-column: 1 / 4;
   grid-row: 4 / 6;
-  margin: 10px;
-
-  font-size: 14px;
-  transition-property: font-size;
-  transition-duration: 0.2;
-  transition-delay: 0.4s;
+  margin: 30px;
 
   background-color: grey;
 }
 
-#mineButton:active {
-  font-size: 36px;
-}
